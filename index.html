@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Security Engineer Roadmap: Zero to Hero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; 
+            color: #e2e8f0; 
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; 
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .neon-text-cyan {
+            color: #22d3ee;
+            text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+        }
+        
+        .neon-text-purple {
+            color: #a78bfa;
+            text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+        }
+
+        .step-connector::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 2px;
+            height: 20px;
+            background-color: #475569;
+            transform: translateX(-50%);
+        }
+        
+        .step-connector:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-cyan-500 selection:text-white">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Cloud Security</span>
+                <span class="text-white">Roadmap</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto">
+                A strategic 9-12 month journey to transform from a novice into a high-value, hybrid Cloud Security Engineer. Mastering the intersection of Blue Team Defense and Cloud Architecture.
+            </p>
+        </header>
+
+        <section class="mb-16">
+            <div class="bg-slate-800 rounded-xl p-6 shadow-lg border-l-4 border-cyan-500">
+                <h2 class="text-2xl font-bold text-white mb-2">The Strategic Timeline</h2>
+                <p class="text-slate-300 mb-6">
+                    This roadmap is structured into four distinct phases, each building upon the last. The journey begins with non-negotiable IT foundations, moves into cloud architecture, specializes in security mechanisms, and culminates in advanced automation and portfolio building.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                    <div class="p-4 bg-slate-900 rounded-lg transform hover:-translate-y-1 transition-transform duration-300">
+                        <div class="text-cyan-400 font-bold text-xl mb-1">Months 1-3</div>
+                        <div class="text-white font-semibold">Foundation</div>
+                        <div class="text-xs text-slate-400 mt-2">Linux, Network, Security+</div>
+                    </div>
+                    <div class="p-4 bg-slate-900 rounded-lg transform hover:-translate-y-1 transition-transform duration-300">
+                        <div class="text-purple-400 font-bold text-xl mb-1">Months 4-5</div>
+                        <div class="text-white font-semibold">Cloud Basics</div>
+                        <div class="text-xs text-slate-400 mt-2">AWS Core, VPC, CCP Cert</div>
+                    </div>
+                    <div class="p-4 bg-slate-900 rounded-lg transform hover:-translate-y-1 transition-transform duration-300">
+                        <div class="text-pink-400 font-bold text-xl mb-1">Months 6-8</div>
+                        <div class="text-white font-semibold">Security Spec.</div>
+                        <div class="text-xs text-slate-400 mt-2">IAM, GuardDuty, Terraform</div>
+                    </div>
+                    <div class="p-4 bg-slate-900 rounded-lg transform hover:-translate-y-1 transition-transform duration-300">
+                        <div class="text-emerald-400 font-bold text-xl mb-1">Months 9-12</div>
+                        <div class="text-white font-semibold">Pro Portfolio</div>
+                        <div class="text-xs text-slate-400 mt-2">Automation, Python, Projects</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <article class="glass-card rounded-xl p-6 shadow-lg">
+                <h3 class="text-xl font-bold text-cyan-400 mb-4 flex items-center">
+                    <span class="mr-2">🐧</span> Phase 1: The Technical Triad
+                </h3>
+                <p class="text-sm text-slate-300 mb-6 leading-relaxed">
+                    You cannot secure a cloud if you don't understand the underlying Operating System and Network. Phase 1 is about building the "muscle memory" of IT. The Radar chart below visualizes the balance of skills required during this foundational phase. While Security concepts are the goal, Linux CLI proficiency and Networking knowledge form the base of the triangle.
+                </p>
+                <div class="chart-container">
+                    <canvas id="foundationRadar"></canvas>
+                </div>
+                <div class="mt-4 p-3 bg-slate-900/50 rounded text-xs text-slate-400">
+                    <strong>Key Action:</strong> Install Ubuntu on a VirtualBox. Learn to live in the Terminal (`chmod`, `chown`, `ps`, `grep`).
+                </div>
+            </article>
+
+            <article class="glass-card rounded-xl p-6 shadow-lg">
+                <h3 class="text-xl font-bold text-purple-400 mb-4 flex items-center">
+                    <span class="mr-2">☁️</span> Phase 2: Cloud Infrastructure Weight
+                </h3>
+                <p class="text-sm text-slate-300 mb-6 leading-relaxed">
+                    Before securing AWS, you must learn to build on it. We focus on the "Big Three" categories: Compute, Storage, and Networking. The Donut chart illustrates the study time allocation for this phase. Note the heavy emphasis on <strong>Networking (VPC)</strong>; this is the most critical component for a security engineer to master early.
+                </p>
+                <div class="chart-container">
+                    <canvas id="cloudDonut"></canvas>
+                </div>
+                <div class="mt-4 p-3 bg-slate-900/50 rounded text-xs text-slate-400">
+                    <strong>Critical Checkpoint:</strong> If you cannot build a custom VPC with public/private subnets from scratch, do not move to Phase 3.
+                </div>
+            </article>
+
+            <article class="glass-card rounded-xl p-6 shadow-lg md:col-span-2">
+                <h3 class="text-xl font-bold text-pink-400 mb-4 flex items-center">
+                    <span class="mr-2">🛡️</span> Phase 3: Security Specialization Stack
+                </h3>
+                <p class="text-sm text-slate-300 mb-6 leading-relaxed">
+                    In Phase 3, you transition from a generalist to a specialist. Identity is the new perimeter in the cloud. This Bar chart ranks the relative importance (and learning curve difficulty) of the core security domains you must master. <strong>IAM</strong> is the undisputed king—misconfigured permissions are the #1 cause of cloud breaches.
+                </p>
+                <div class="chart-container">
+                    <canvas id="securityBar"></canvas>
+                </div>
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-slate-800 p-3 rounded border border-slate-700">
+                        <div class="text-pink-400 font-bold text-sm">IAM Policy</div>
+                        <div class="text-xs text-slate-400">Least Privilege & JSON</div>
+                    </div>
+                    <div class="bg-slate-800 p-3 rounded border border-slate-700">
+                        <div class="text-pink-400 font-bold text-sm">Detection</div>
+                        <div class="text-xs text-slate-400">GuardDuty & CloudTrail</div>
+                    </div>
+                    <div class="bg-slate-800 p-3 rounded border border-slate-700">
+                        <div class="text-pink-400 font-bold text-sm">IaC</div>
+                        <div class="text-xs text-slate-400">Terraform Security</div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="glass-card rounded-xl p-6 shadow-lg md:col-span-2">
+                <h3 class="text-xl font-bold text-emerald-400 mb-4 flex items-center">
+                    <span class="mr-2">🚀</span> Phase 4: "The Automated Sentinel" Workflow
+                </h3>
+                <p class="text-sm text-slate-300 mb-6 leading-relaxed">
+                    To get hired, you need a portfolio that proves you can build automated defenses. The diagram below illustrates the logic flow of your capstone project: <strong>Automatic Remediation of Open Ports.</strong> This demonstrates proficiency in Event-Driven Architecture, Python scripting, and Incident Response.
+                </p>
+                
+                <div class="w-full bg-slate-900 p-6 rounded-xl border border-slate-700 overflow-x-auto">
+                    <div class="flex flex-col md:flex-row items-center justify-between min-w-[600px] relative space-y-8 md:space-y-0">
+                        
+                        <div class="flex flex-col items-center z-10 w-48">
+                            <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-2xl mb-2 shadow-lg shadow-red-500/50">⚠️</div>
+                            <div class="bg-slate-800 border border-red-500 p-3 rounded text-center w-full">
+                                <div class="font-bold text-red-400 text-sm">Trigger Event</div>
+                                <div class="text-xs text-slate-400">User launches EC2 with Port 22 Open (0.0.0.0/0)</div>
+                            </div>
+                        </div>
+
+                        <div class="hidden md:block h-1 flex-1 bg-slate-600 mx-2 relative">
+                            <div class="absolute right-0 top-1/2 transform -translate-y-1/2 text-slate-500 text-xl">▶</div>
+                        </div>
+                        <div class="md:hidden w-1 h-12 bg-slate-600 my-2 relative">
+                            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-slate-500 text-xl">▼</div>
+                        </div>
+
+                        <div class="flex flex-col items-center z-10 w-48">
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-2xl mb-2 shadow-lg shadow-blue-500/50">👁️</div>
+                            <div class="bg-slate-800 border border-blue-500 p-3 rounded text-center w-full">
+                                <div class="font-bold text-blue-400 text-sm">CloudWatch Event</div>
+                                <div class="text-xs text-slate-400">Detects 'RunInstances' API Call</div>
+                            </div>
+                        </div>
+
+                        <div class="hidden md:block h-1 flex-1 bg-slate-600 mx-2 relative">
+                            <div class="absolute right-0 top-1/2 transform -translate-y-1/2 text-slate-500 text-xl">▶</div>
+                        </div>
+                        <div class="md:hidden w-1 h-12 bg-slate-600 my-2 relative">
+                            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-slate-500 text-xl">▼</div>
+                        </div>
+
+                        <div class="flex flex-col items-center z-10 w-48">
+                            <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-2xl mb-2 shadow-lg shadow-emerald-500/50">🐍</div>
+                            <div class="bg-slate-800 border border-emerald-500 p-3 rounded text-center w-full">
+                                <div class="font-bold text-emerald-400 text-sm">Lambda (Python)</div>
+                                <div class="text-xs text-slate-400">Analyzes Security Group & Revokes Rule</div>
+                            </div>
+                        </div>
+
+                        <div class="hidden md:block h-1 flex-1 bg-slate-600 mx-2 relative">
+                            <div class="absolute right-0 top-1/2 transform -translate-y-1/2 text-slate-500 text-xl">▶</div>
+                        </div>
+                        <div class="md:hidden w-1 h-12 bg-slate-600 my-2 relative">
+                            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-slate-500 text-xl">▼</div>
+                        </div>
+
+                        <div class="flex flex-col items-center z-10 w-48">
+                            <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-2xl mb-2 shadow-lg shadow-yellow-500/50">📧</div>
+                            <div class="bg-slate-800 border border-yellow-500 p-3 rounded text-center w-full">
+                                <div class="font-bold text-yellow-400 text-sm">SNS Alert</div>
+                                <div class="text-xs text-slate-400">Emails Admin: "Security Violation Fixed"</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+
+            <article class="glass-card rounded-xl p-6 shadow-lg md:col-span-2">
+                <h3 class="text-xl font-bold text-white mb-4">🗓️ Bonus: Week 1 Daily Schedule (Linux & CLI)</h3>
+                <p class="text-sm text-slate-400 mb-6">
+                    A concrete plan to start your journey today. Focus entirely on getting comfortable with the Command Line Interface (CLI).
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-slate-300">
+                        <thead class="bg-slate-800 text-cyan-400 uppercase font-bold">
+                            <tr>
+                                <th class="px-4 py-3 rounded-tl-lg">Day</th>
+                                <th class="px-4 py-3">Focus Area</th>
+                                <th class="px-4 py-3 rounded-tr-lg">Action Items</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-700">
+                            <tr class="hover:bg-slate-800/50 transition">
+                                <td class="px-4 py-3 font-semibold text-white">Mon</td>
+                                <td class="px-4 py-3 text-cyan-300">Setup & Basics</td>
+                                <td class="px-4 py-3">Install VirtualBox/Ubuntu. Learn `pwd`, `ls`, `cd`, `mkdir`.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/50 transition">
+                                <td class="px-4 py-3 font-semibold text-white">Tue</td>
+                                <td class="px-4 py-3 text-cyan-300">File Manipulation</td>
+                                <td class="px-4 py-3">Create/Edit files. Learn `touch`, `cp`, `mv`, `rm`, `cat`.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/50 transition">
+                                <td class="px-4 py-3 font-semibold text-white">Wed</td>
+                                <td class="px-4 py-3 text-cyan-300">Permissions</td>
+                                <td class="px-4 py-3">Master "rwx". Learn `chmod 700`, `chown`, and `sudo`.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/50 transition">
+                                <td class="px-4 py-3 font-semibold text-white">Thu</td>
+                                <td class="px-4 py-3 text-cyan-300">Processes</td>
+                                <td class="px-4 py-3">Process management. `ps aux`, `top`, `htop`, `kill`.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/50 transition">
+                                <td class="px-4 py-3 font-semibold text-white">Fri</td>
+                                <td class="px-4 py-3 text-cyan-300">Networking CLI</td>
+                                <td class="px-4 py-3">Connectivity checks. `ping`, `ifconfig`, `ssh`.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/50 transition">
+                                <td class="px-4 py-3 font-semibold text-white">Sat</td>
+                                <td class="px-4 py-3 text-cyan-300">Bash Scripting</td>
+                                <td class="px-4 py-3">Write `hello.sh`. Learn variables & execution.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/50 transition">
+                                <td class="px-4 py-3 font-semibold text-white">Sun</td>
+                                <td class="px-4 py-3 text-cyan-300">Challenge</td>
+                                <td class="px-4 py-3">Complete Levels 0-5 of OverTheWire: Bandit.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+        </div>
+
+        <footer class="mt-16 text-center border-t border-slate-800 pt-8">
+            <h4 class="text-2xl font-bold text-white mb-4">Ready to Start?</h4>
+            <div class="inline-block bg-gradient-to-r from-cyan-500 to-blue-600 p-[2px] rounded-full">
+                <div class="bg-slate-900 rounded-full px-8 py-3">
+                    <span class="text-white font-semibold">Goal: Job Ready in 9-12 Months</span>
+                </div>
+            </div>
+            <p class="text-slate-500 text-sm mt-6">
+                Visualized Roadmap based on "Cloud Security Master Plan". No SVG or External Images used.
+            </p>
+        </footer>
+
+    </div>
+
+    <script>
+        // --- UTILITY FUNCTIONS ---
+        
+        // Function to wrap long labels for Chart.js
+        const wrapLabel = (str, maxChars) => {
+            if (str.length <= maxChars) return str;
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + 1 + words[i].length <= maxChars) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        };
+
+        // Common Tooltip Configuration to handle array labels
+        const commonTooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // Common Chart Defaults for Dark Theme
+        Chart.defaults.color = '#94a3b8';
+        Chart.defaults.borderColor = '#334155';
+        Chart.defaults.font.family = "'Inter', sans-serif";
+
+        // --- CHART 1: FOUNDATION RADAR (PHASE 1) ---
+        const ctxRadar = document.getElementById('foundationRadar').getContext('2d');
+        const radarLabels = ['Linux CLI', 'Networking (TCP/IP)', 'Security Concepts', 'Scripting (Bash)', 'Virtualization'];
+        const wrappedRadarLabels = radarLabels.map(l => wrapLabel(l, 16));
+
+        new Chart(ctxRadar, {
+            type: 'radar',
+            data: {
+                labels: wrappedRadarLabels,
+                datasets: [{
+                    label: 'Proficiency Target (Months 1-3)',
+                    data: [90, 85, 80, 60, 70],
+                    fill: true,
+                    backgroundColor: 'rgba(34, 211, 238, 0.2)', 
+                    borderColor: '#22d3ee',
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#22d3ee',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#22d3ee'
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: '#334155' },
+                        grid: { color: '#334155' },
+                        pointLabels: {
+                            color: '#e2e8f0',
+                            font: { size: 11 }
+                        },
+                        ticks: { display: false, backdropColor: 'transparent' }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: commonTooltipConfig
+                }
+            }
+        });
+
+        // --- CHART 2: CLOUD FOCUS DONUT (PHASE 2) ---
+        const ctxDonut = document.getElementById('cloudDonut').getContext('2d');
+        const donutLabels = ['Networking (VPC, Subnets)', 'Compute (EC2, Lambda)', 'Storage (S3, EBS)', 'Other Services'];
+        const wrappedDonutLabels = donutLabels.map(l => wrapLabel(l, 16));
+
+        new Chart(ctxDonut, {
+            type: 'doughnut',
+            data: {
+                labels: wrappedDonutLabels,
+                datasets: [{
+                    data: [40, 30, 20, 10], 
+                    backgroundColor: [
+                        '#a78bfa', // Violet
+                        '#22d3ee', // Cyan
+                        '#f472b6', // Pink
+                        '#475569'  // Slate
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 10
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                cutout: '60%',
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: { boxWidth: 12, padding: 15 }
+                    },
+                    tooltip: commonTooltipConfig
+                }
+            }
+        });
+
+        // --- CHART 3: SECURITY SPECIALIZATION BAR (PHASE 3) ---
+        const ctxBar = document.getElementById('securityBar').getContext('2d');
+        const barLabels = ['IAM (Identity & Access)', 'Infrastructure as Code', 'Threat Detection', 'Logging & Auditing'];
+        const wrappedBarLabels = barLabels.map(l => wrapLabel(l, 16));
+
+        new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: wrappedBarLabels,
+                datasets: [{
+                    label: 'Criticality Score (0-100)',
+                    data: [100, 85, 80, 75],
+                    backgroundColor: [
+                        '#f43f5e', // Rose
+                        '#10b981', // Emerald
+                        '#3b82f6', // Blue
+                        '#f59e0b'  // Amber
+                    ],
+                    borderRadius: 4,
+                    barThickness: 30
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: { color: '#334155' }
+                    },
+                    y: {
+                        grid: { display: false }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: commonTooltipConfig
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
